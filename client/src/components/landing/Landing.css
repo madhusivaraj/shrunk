@@ -3,6 +3,7 @@
 .landing {
   margin-top: 75px;
   margin-left: 175px;
+  margin-right: 175px;
 }
 .submit-btn {
   width: 50%;
@@ -33,12 +34,38 @@ button {
   border: none;
   color:  black;
 }
-.onClick{
+
+button {
   margin-left: -7px;
   background: white;
   border: none;
-  color:  blue;
+  color:  black;
 }
+
+.Select {
+  box-shadow: none;
+}
+
+button:active { 
+  background-color: none;
+  color: blue;
+  outline: black;
+}
+
+button::after { 
+  background-color: none;
+  color: blue;
+  outline: black;
+}
+
+h4{
+  font-weight: 500;
+}
+
+h5{
+  font-size: 20px;
+}
+
 
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   background-color: none;
@@ -46,9 +73,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   border-bottom: none;
   border-radius: 0;
   outline: none;
+  color: rgb(67, 120, 155);
+  font-weight: 300;
   height: 3rem;
   width: 100%;
-  font-size: 1rem;
+  font-size: 2rem;
   margin: 0 0 20px 0;
   padding: 0;
   -webkit-box-shadow: none;
@@ -58,6 +87,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.button:onClick {
+  border:1px solid #999;
+  color:#000;
 }
 
 /*

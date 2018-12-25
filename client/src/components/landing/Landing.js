@@ -14,10 +14,7 @@ class Landing extends Component {
       showError: false,
       apiError: "",
       showApiError: false,
-      showLoading: false,
-      exUrl:
-        "https://www.amazon.com/Apple-iPhone-GSM-Unlocked-5-8/dp/B075QMZH2L",
-      exShortUrl: constants.baseUrl
+      showLoading: false
     };
     this.handleUserInput = this.handleUserInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -104,6 +101,7 @@ class Landing extends Component {
         {this.state.showApiError && (
           <div className="shorten-error">{this.state.apiError}</div>
         )}
+        
         {this.state.showShortenUrl && (
           <div className="shorten-title">
             Success! Your new URL is {` `}
