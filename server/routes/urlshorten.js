@@ -31,7 +31,7 @@ module.exports = app => {
         if (item) {
           res.status(200).json(item);
         } else {
-          shortUrl = shortBaseUrl + "/" + urlCode;
+          shortUrl = urlCode;
           const item = new UrlShorten({
             originalUrl,
             shortUrl,

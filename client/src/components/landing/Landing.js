@@ -15,6 +15,8 @@ class Landing extends Component {
       apiError: "",
       showApiError: false,
       showLoading: false,
+      exUrl:
+        "https://www.amazon.com/Apple-iPhone-GSM-Unlocked-5-8/dp/B075QMZH2L",
       exShortUrl: constants.baseUrl
     };
     this.handleUserInput = this.handleUserInput.bind(this);
@@ -39,7 +41,7 @@ class Landing extends Component {
             this.setState({
               showLoading: false,
               showShortenUrl: true,
-              shortenUrl: json.data.shortUrl
+              shortenUrl: constants.baseUrl + json.data.urlCode
             });
           }, 0);
         })
@@ -87,17 +89,20 @@ class Landing extends Component {
   }
   render() {
     return (
-
-    
       <div className="landing">
         <div>
           <h5> Original Url</h5>
         </div>
-
+        <div>
+          Ex:{" "}
+          <a target="_blank" href={this.state.exUrl}>
+            {this.state.exUrl}
+          </a>
+        </div>
         <input
           name="originalUrl"
           field="originalUrl"
-          placeholder="Your link here..."
+          placeholder="Paste your link.."
           value={this.state.originalUrl}
           onChange={this.handleUserInput.bind(this)}
         />
@@ -131,6 +136,11 @@ class Landing extends Component {
           </div>
         )}
         <div className="shorten-imp">
+          [* Here base url has the default value{" "}
+          <a target="_blank" href={this.state.exShortUrl}>
+            {this.state.exShortUrl}
+          </a>{" "}
+          .This will change based on domain name]
         </div>
       </div>
     );
