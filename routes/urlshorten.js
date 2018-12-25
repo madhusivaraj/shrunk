@@ -4,6 +4,7 @@ const UrlShorten = mongoose.model("UrlShorten");
 const shortid = require("shortid");
 const errorUrl='http://localhost/error';
 module.exports = app => {
+
   app.get("/url/:code", async (req, res) => {
     const urlCode = req.params.code;
     const item = await UrlShorten.findOne({ urlCode: urlCode });
@@ -13,6 +14,7 @@ module.exports = app => {
       return res.redirect(errorUrl);
     }
   });
+
   app.post("/url", async (req, res) => {
     const { originalUrl, shortBaseUrl } = req.body;
     if (validUrl.isUri(shortBaseUrl)) {

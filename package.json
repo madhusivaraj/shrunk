@@ -1,0 +1,17 @@
+{
+  "name": "shrunk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/madhusivaraj/shrunk.git",
+  "author": "<madhuksivaraj@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0",
+    "shortid": "^2.2.14",
+    "valid-url": "^1.0.9"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
