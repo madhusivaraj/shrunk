@@ -59,13 +59,7 @@ class Landing extends Component {
   renderButton() {
     if (!this.state.showLoading) {
       return (
-        <button
-          className="btn waves-effect waves-light submit-btn"
-          name="action"
-          onClick={this.handleSubmit}
-        >
-          Submit
-        </button>
+        <button onClick={this.handleSubmit}>Create ></button>
       );
     } else {
       return (
@@ -89,20 +83,15 @@ class Landing extends Component {
   }
   render() {
     return (
-      <div className="landing">
+   <div className="landing">
         <div>
-          <h5> Original Url</h5>
-        </div>
-        <div>
-          Ex:{" "}
-          <a target="_blank" href={this.state.exUrl}>
-            {this.state.exUrl}
-          </a>
+          <h4>SHRUNK</h4>
+          <h5>A URL shortener.</h5>
         </div>
         <input
           name="originalUrl"
           field="originalUrl"
-          placeholder="Paste your link.."
+          placeholder="Your link here..."
           value={this.state.originalUrl}
           onChange={this.handleUserInput.bind(this)}
         />
@@ -111,37 +100,19 @@ class Landing extends Component {
           <div className="formError">Original Url is required</div>
         )}
 
-        <div>
-          <h5>*Base Url</h5>
-        </div>
-
-        <input
-          field="baseUrl"
-          name="baseUrl"
-          placeholder={this.state.exShortUrl}
-          value={this.state.baseUrl}
-          onChange={this.handleUserInput.bind(this)}
-          disabled
-        />
         {this.renderButton()}
         {this.state.showApiError && (
           <div className="shorten-error">{this.state.apiError}</div>
         )}
         {this.state.showShortenUrl && (
           <div className="shorten-title">
-            Shortened Url is ->{` `}
+            Success! Your new URL is {` `}
             <a target="_blank" href={this.state.shortenUrl}>
               {this.state.shortenUrl}
             </a>
           </div>
         )}
-        <div className="shorten-imp">
-          [* Here base url has the default value{" "}
-          <a target="_blank" href={this.state.exShortUrl}>
-            {this.state.exShortUrl}
-          </a>{" "}
-          .This will change based on domain name]
-        </div>
+      
       </div>
     );
   }
